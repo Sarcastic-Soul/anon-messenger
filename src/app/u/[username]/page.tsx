@@ -87,8 +87,8 @@ export default function SendMessage() {
     return (
         <>
             <Navbar />
-            <div className="container mx-auto my-8 p-6 bg-white rounded-xl shadow-lg max-w-4xl">
-                <h1 className="text-4xl font-bold mb-6 text-center text-black">
+            <div className="container mx-auto my-8 p-6 bg-white rounded-xl shadow-lg max-w-4xl dark:bg-gray-700">
+                <h1 className="text-4xl font-bold mb-6 text-center text-black dark:text-gray-200">
                     Public Profile Link
                 </h1>
                 <Form {...form}>
@@ -101,7 +101,7 @@ export default function SendMessage() {
                             name="content"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="text-lg text-black">
+                                    <FormLabel className="text-lg text-black dark:text-gray-300">
                                         Send Anonymous Message to{' '}
                                         <span className="font-bold">{username}</span>
                                     </FormLabel>
@@ -129,10 +129,11 @@ export default function SendMessage() {
                                 <Button
                                     type="submit"
                                     disabled={isLoading || !messageContent}
-                                    className="w-full bg-black text-white hover:bg-gray-800 transition duration-300"
+                                    className="w-full bg-black text-white hover:bg-gray-800 transition-transform duration-200 active:scale-95"
                                 >
                                     Send It
                                 </Button>
+
                             )}
                         </div>
                     </form>
@@ -141,13 +142,13 @@ export default function SendMessage() {
                 <div className="space-y-4 my-8">
                     <Card className="border-t-2 border-black">
                         <CardHeader className="relative">
-                            <h3 className="text-xl font-semibold text-black text-center">
+                            <h3 className="text-xl font-semibold text-black text-center dark:text-gray-200">
                                 Suggested Messages
                             </h3>
                             {/* Refresh Button */}
                             <Button
                                 variant="ghost"
-                                className="absolute top-2 right-2 p-2 text-gray-600 hover:text-black"
+                                className="absolute top-2 right-2 p-2 text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white"
                                 onClick={handleRefresh}
                             >
                                 <RefreshCw className="w-5 h-5" />
@@ -158,22 +159,23 @@ export default function SendMessage() {
                                 <Button
                                     key={index}
                                     variant="outline"
-                                    className="mb-2 p-3 text-black hover:bg-gray-200 transition duration-200"
+                                    className="mb-2 p-3 text-black hover:bg-gray-200 transition-transform duration-200 active:scale-95 dark:text-gray-300 dark:hover:bg-gray-700"
                                     onClick={() => handleMessageClick(message)}
                                 >
                                     {message}
                                 </Button>
+
                             ))}
                         </CardContent>
                     </Card>
                 </div>
                 <Separator className="my-6" />
                 <div className="text-center">
-                    <div className="mb-4 text-black">
+                    <div className="mb-4 text-black dark:text-gray-300">
                         Don't have an account yet?
                     </div>
                     <Link href={'/sign-up'}>
-                        <Button className="bg-black text-white hover:bg-gray-800">
+                        <Button className="bg-black text-white transition-transform duration-200 active:scale-95 hover:bg-gray-800 dark:bg-gray-200 dark:text-black">
                             Create Your Account
                         </Button>
                     </Link>

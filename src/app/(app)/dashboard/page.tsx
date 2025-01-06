@@ -127,7 +127,7 @@ const dashboardPage = () => {
                 />
                 <Button
                     onClick={copyToClipboard}
-                    className="dark:bg-gray-200 dark:hover:bg-gray-400"
+                    className="transition-transform duration-200 active:scale-95 dark:bg-gray-200 dark:hover:bg-gray-400"
                 >
                     <Copy className="h-5 w-5" />
                 </Button>
