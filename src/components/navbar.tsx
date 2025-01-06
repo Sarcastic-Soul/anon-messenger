@@ -28,7 +28,7 @@ const Navbar = () => {
                         {
                             session ? (
                                 <>
-                                    <Link href={`/dashboard/${user?.username}`} passHref>
+                                    <Link href={`/dashboard`} passHref>
                                         <span className="text-lg text-gray-700 dark:text-gray-100 cursor-pointer">
                                             Welcome, <span className='font-bold'>{user?.username || user?.email}</span>
                                         </span>
